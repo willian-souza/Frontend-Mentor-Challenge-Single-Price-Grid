@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+    background-color: hsl(204, 43%, 93%);
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.card-grid{
+    width: 680px;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    " header header"
+    " price about";
+}
+
+.header{
+    grid-area: header;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px 10px 0 0;
+}
+
+.header h2{
+    color: hsl(179, 62%, 43%);
+}
+
+.header h3{
+    color: hsl(71, 73%, 54%);
+    margin-top: 20px;
+}
+
+.header p{
+    max-width: 580px;
+    margin-top: 10px;
+    color: hsl(206, 5%, 74%);
+    line-height: 25px;
+    
+}
+
+.price{
+    grid-area: price;
+    background-color: hsl(179, 62%, 43%);
+    padding: 40px;
+    color: white;
+    border-radius: 0px 0px 0px 10px;
+}
+
+.price span:nth-of-type(1){
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.price>div {
+    display: flex;
+    align-items: center;  
+    margin-top: 20px;  
+}
+
+.price span:nth-of-type(2){
+   opacity: 0.5;
+   margin-left: 12px;
+}
+
+.price p{
+    margin-top: 15px;
+    opacity: 0.8;
+}
+
+.price button{
+    width: 100%;
+    background-color: hsl(71, 73%, 54%);
+    border: 0;
+    margin-top: 50px;
+    padding: 15px ;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+    box-shadow: 24px 24px 50px -16px rgba(0,0,0,0.92);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.price button:hover{
+    transform: scale(1.10);
+}
+
+.about{
+    grid-area: about;
+    background-color: hsl(179, 53%, 57%);
+    padding: 40px;
+    color: white;
+    border-radius: 0px 0px 10px 0px;
+}
+
+.about ul{
+    margin-top: 20px;
+    list-style: none;
+    opacity: 0.6;
+    font-size: 0.85rem;
+}
+
+.about ul li{
+    line-height: 25px;
+}
+
+@media (max-width: 510px){
+    .container{
+        height: 100%;
+        margin: 100px 0 100px 0;
+    }
+    .card-grid{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        " header"
+        " price"
+        "about";
+    }
+    .price{
+        border-radius: 0px;
+    }
+    .about{
+        border-radius: 0px 0px 10px 10px;
+    }
+}
